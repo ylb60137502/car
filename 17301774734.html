@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一键挪车自用</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header h1 i {
+            margin-right: 15px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .instructions h3 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .instructions ul {
+            list-style-type: none;
+        }
+        
+        .instructions li {
+            padding: 8px 0;
+            color: #34495e;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .instructions li:last-child {
+            border-bottom: none;
+        }
+        
+        .instructions li i {
+            margin-right: 10px;
+            color: #2ecc71;
+        }
+        
+        .call-action {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .call-action p {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.5);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+        }
+        
+        .note {
+            background: #fff4e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border-left: 4px solid #ffa94d;
+        }
+        
+        .note h3 {
+            color: #d35400;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note h3 i {
+            margin-right: 10px;
+        }
+        
+        .note p {
+            color: #e67e22;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 16px 35px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-car"></i> 一键挪车自用版</h1>
+            <p>快速联系车主，解决挪车问题</p>
+        </div>
+        
+        <div class="content">
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> 使用说明</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> 点击下方"一键呼叫"按钮</li>
+                    <li><i class="fas fa-check-circle"></i> 系统将自动跳转到拨号界面</li>
+                    <li><i class="fas fa-check-circle"></i> 您的电话将对车主显示</li>
+                    <li><i class="fas fa-check-circle"></i> 必要时可能需要提供一下挪车的车牌号</li>
+                </ul>
+            </div>
+            
+            <div class="call-action">
+                <p>点击下方按钮直接呼叫挪车服务</p>
+                <!-- 这里使用tel:协议，实际号码替换为真实的挪车服务电话 -->
+                <a href="tel:17301774734" class="btn"><i class="fas fa-phone"></i> 一键呼叫</a>
+            </div>
+            
+            <div class="note">
+                <h3><i class="fas fa-exclamation-circle"></i> 温馨提示</h3>
+                <p>此服务通过调用手机拨号键盘，直接拨打车主预留电话，非小程序跳转，请放心使用</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 一键挪车自用 | 隐私保护 | NIYON</p>
+    </div>
+</body>
+</html>
