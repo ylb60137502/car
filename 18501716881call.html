@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8 without BOM">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一键拨打我们的电话</title>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #07C160; /* 微信绿色 */
+        }
+        .phone-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #1a1a1a;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: #07C160;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #06AE56;
+        }
+        .tip {
+            font-size: 14px;
+            color: #888;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>扫码挪车 临时停靠</h2>
+        <p>感谢您扫码联系我，请点击下方按钮直接拨号</p>
+        
+        <!-- !!! 重要：将 13800138000 替换为你自己的真实电话号码 !!! -->
+        <div class="phone-number"></div>
+        <a class="btn" href="tel:18501716881">一键拨号</a>
+        
+        <p class="tip">提示：点击"一键拨号"后，系统将弹出拨号窗口，请确认即可拨打。</p>
+    </div>
+</body>
+</html>
